@@ -39,7 +39,7 @@ const questions: Array<Question> = [
   },
   {
     type: "true_false",
-    question: "The sky is blue.",
+    question: "The Wix Campus has a pool.",
     answer: false,
   },
   {
