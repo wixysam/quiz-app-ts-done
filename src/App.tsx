@@ -1,6 +1,19 @@
 import { useState, useRef } from "react";
 import "./App.css";
 
+const calculateWixAge = (): number => {
+  const wixFounded = new Date("2006-06-01");
+  const today = new Date();
+  return (
+    today.getFullYear() -
+    wixFounded.getFullYear() -
+    (today <
+    new Date(today.getFullYear(), wixFounded.getMonth(), wixFounded.getDate())
+      ? 1
+      : 0)
+  );
+};
+
 type QuestionType = "multiple_choice" | "true_false" | "numeric";
 
 type AnswerType = string | boolean | number;
@@ -56,7 +69,7 @@ const questions: Array<Question> = [
   {
     type: "numeric",
     question: "How old is Wix?",
-    answer: 18,
+    answer: calculateWixAge(),
   },
 ];
 
